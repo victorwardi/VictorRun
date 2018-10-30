@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<h2>Your posts   <fa-icon icon="coffee"></fa-icon></h2>
+<h2>Your posts </h2>
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
@@ -23,7 +23,10 @@
       <td>{{post.id}}</td>
       <td>{{post.title}}</td>
       <td>{{post.date}}</td>
-      <td><fa-icon icon="coffee"></fa-icon></td>
+      <td>
+
+        <a routerLink="edit/{{post.id}}"><fa-icon icon="edit" routerLink=""></fa-icon></a>    <a (click)="deletePost(post.id)"><fa-icon icon="trash" ></fa-icon></a>
+      </td>
     </tr>
     </tbody>
   </table>

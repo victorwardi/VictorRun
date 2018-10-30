@@ -1,5 +1,5 @@
 <div class="alert alert-success" role="alert" *ngIf="added">
-  This is a success alert—check it out!
+  Post {{post.id}} added!
 </div>
 <div class="alert alert-danger" role="alert" *ngIf="error">
   This is a success alert—check it out!
@@ -7,7 +7,7 @@
 
 <form (ngSubmit)="savePost()" #postForm="ngForm">
   <div class="form-group">
-    <label for="post-title">Title</label>
+    <label for="post-title">Title </label>
     <input [(ngModel)]="post.title" name="title" type="text" class="form-control" id="post-title">
   </div>
   <div class="form-group">

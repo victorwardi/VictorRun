@@ -3,6 +3,7 @@ import {PostService} from '../../services/post.service';
 import {Observable} from 'rxjs';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {take} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -12,6 +13,7 @@ import {take} from 'rxjs/operators';
 export class PostComponent implements OnInit {
 
   posts: Observable<any[]>;
+
 
   constructor(private db: AngularFirestore, private postService: PostService) {
   }

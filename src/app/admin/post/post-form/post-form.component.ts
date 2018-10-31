@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from '../../../services/post.service';
 import {Post} from '../../../models/post.model';
-import {NgForm} from '@angular/forms';
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import {switchMap} from 'rxjs/operators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-post-form',

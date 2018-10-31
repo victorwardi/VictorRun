@@ -12,9 +12,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
-import { PostFormComponent } from './admin/post/post-form/post-form.component';
+import {PostFormComponent} from './admin/post/post-form/post-form.component';
 import {RouterModule, Routes} from '@angular/router';
 import {EditorModule} from '@tinymce/tinymce-angular';
 import {FormsModule} from '@angular/forms';
@@ -27,10 +27,13 @@ library.add(faEdit);
 
 const appRoutes: Routes = [
   {path: '', component: AppComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'admin/posts', component: PostComponent},
-  {path: 'admin/posts/add', component: PostFormComponent},
-  {path: 'admin/posts/edit/:id', component: PostFormComponent},
+  {
+    path: 'admin', component: AdminComponent, children: [
+      {path: 'posts', component: PostComponent},
+      {path: 'posts/add', component: PostFormComponent},
+      {path: 'posts/edit/:id', component: PostFormComponent},
+    ]
+  },
 ];
 
 @NgModule({

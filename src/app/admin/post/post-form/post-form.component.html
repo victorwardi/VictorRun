@@ -1,8 +1,8 @@
 <div class="alert alert-success" role="alert" *ngIf="added">
-  Post {{post.id}} added!
+ {{message}}
 </div>
 <div class="alert alert-danger" role="alert" *ngIf="error">
-  This is a success alert—check it out!
+ Sorry! Post was not added.
 </div>
 
 <form (ngSubmit)="savePost()" #postForm="ngForm">
@@ -14,5 +14,5 @@
     <label for="post-content" ></label>
     <textarea [(ngModel)]="post.content"  name="content" class="form-control" id="post-content" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="submit" class="btn btn-primary">{{buttonLabel}}</button>
 </form>

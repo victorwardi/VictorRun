@@ -4,9 +4,8 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AdminComponent} from './admin/admin.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {NavbarComponent} from './admin/ui/navbar/navbar.component';
-import {MenuComponent} from './admin/ui/menu/menu.component';
-import {SampleComponent} from './admin/sample/sample.component';
+import {AdminNavbarComponent} from './admin/ui/navbar/admin-navbar.component';
+import {AdminMenuComponent} from './admin/ui/menu/admin-menu.component';
 import {PostComponent} from './admin/post/post.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -16,8 +15,11 @@ import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {PostFormComponent} from './admin/post/post-form/post-form.component';
 import {RouterModule, Routes} from '@angular/router';
-import {EditorModule} from '@tinymce/tinymce-angular';
 import {FormsModule} from '@angular/forms';
+import {AdminMainComponent} from './admin/ui/main/admin-main.component';
+import { MainComponent } from './ui/main/main.component';
+import {AngularEditorModule} from '@kolkov/angular-editor';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
@@ -26,25 +28,28 @@ library.add(faEdit);
 
 
 const appRoutes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: MainComponent},
   {
     path: 'admin', component: AdminComponent, children: [
       {path: 'posts', component: PostComponent},
       {path: 'posts/add', component: PostFormComponent},
-      {path: 'posts/edit/:id', component: PostFormComponent},
+      {path: 'posts/edit/:id', component: PostFormComponent}
     ]
   },
+
+
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    NavbarComponent,
-    MenuComponent,
-    SampleComponent,
+    AdminNavbarComponent,
+    AdminMenuComponent,
     PostComponent,
-    PostFormComponent
+    PostFormComponent,
+    AdminMainComponent,
+    MainComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -54,11 +59,13 @@ const appRoutes: Routes = [
     NgbModule,
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
-    EditorModule,
-    FormsModule
+    AngularEditorModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {
 }

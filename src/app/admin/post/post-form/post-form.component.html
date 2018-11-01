@@ -1,27 +1,28 @@
+
+<div class="alert" [ngClass]="success ? 'alert-success' : 'alert-danger'" role="alert" *ngIf="success || error">
+  {{message}}
+</div>
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2"><span *ngIf="post.title">{{post.title}}</span></h1>
+  <h4 class="mb-0"><span *ngIf="post.title">{{post.title}}&nbsp;</span><span class="post-title-disabled" *ngIf="!post.title">Post Title...</span></h4>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <a class="btn btn-sm btn-outline-secondary" routerLink="/admin/posts/add" role="button">New</a>
+      <!--<a class="btn btn-sm btn-outline-secondary" role="button" (click)="addNewPost()">New</a>-->
+      <a class="btn btn-sm btn-outline-secondary" role="button" routerLink="/admin/posts/add">New</a>
     </div>
   </div>
 </div>
-
-<div class="alert alert-success" role="alert" *ngIf="added">
- {{message}}
-</div>
-<div class="alert alert-danger" role="alert" *ngIf="error">
- Sorry! Post was not added.
-</div>
-
 <form (ngSubmit)="savePost()" #postForm="ngForm">
   <div class="form-group">
     <label for="post-title">Title </label>
     <input [(ngModel)]="post.title" name="title" type="text" class="form-control" id="post-title">
   </div>
   <div class="form-group">
-    <label for="post-content" ></label>
-    <textarea [(ngModel)]="post.content"  name="content" class="form-control" id="post-content" rows="3"></textarea>
+    <angular-editor  [(ngModel)]="post.content" [config]="editorConfig" name="content"></angular-editor>
+    <!--<textarea [(ngModel)]="post.content"  name="content" class="form-control" id="post-content" rows="3"></textarea>-->
   </div>
-  <button type="submit" class="btn btn-primary">{{buttonLabel}}</button>
+  <div class="text-right">
+  <button type="submit" class="btn btn-primary">{{buttonLabel}}</button> <a routerLink="../../" class="btn btn-secondary ml-2">Cancel</a>
+
+  </div>
 </form>

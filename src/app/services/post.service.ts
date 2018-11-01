@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Post} from '../models/post.model';
 import {take} from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,9 +12,9 @@ export class PostService {
 
   constructor(private db: AngularFirestore) {
     this.posts = db.collection('posts');
-    }
+  }
 
-   getPost(id: string) {
+  getPost(id: string) {
     return this.posts.doc<Post>(id).valueChanges().pipe(take(1));
   }
 
@@ -32,6 +33,12 @@ export class PostService {
   }
 
   update(post: Post): void {
-    this.posts.doc(post.id).update({id: post.id, title: post.title, content: post.content, date: post.date, updated: new Date()});
+    try {
+      console.log(post);
+      this.posts.doc(post.id).update({id: post.id, title: post.title, content: post.content, date: post.date, updated: new Date()});
+    } catch (e) {
+      console.log(e);
+    }
+
   }
 }

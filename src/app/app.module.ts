@@ -14,31 +14,20 @@ import {environment} from '../environments/environment';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {PostFormComponent} from './admin/post/post-form/post-form.component';
-import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {AdminMainComponent} from './admin/ui/main/admin-main.component';
-import { MainComponent } from './ui/main/main.component';
+import {MainComponent} from './ui/main/main.component';
 import {AngularEditorModule} from '@kolkov/angular-editor';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {PageNotFoundComponent} from './ui/page-not-found/page-not-found.component';
+import {AppRoutingModule} from './app-routing.module';
+import { NotAllowedComponent } from './admin/auth/not-alowed/not-allowed.component';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
 library.add(faTrash);
 library.add(faEdit);
 
-
-const appRoutes: Routes = [
-  {path: '', component: MainComponent},
-  {
-    path: 'admin', component: AdminComponent, children: [
-      {path: 'posts', component: PostComponent},
-      {path: 'posts/add', component: PostFormComponent},
-      {path: 'posts/edit/:id', component: PostFormComponent}
-    ]
-  },
-
-
-];
 
 @NgModule({
   declarations: [
@@ -49,7 +38,9 @@ const appRoutes: Routes = [
     PostComponent,
     PostFormComponent,
     AdminMainComponent,
-    MainComponent
+    MainComponent,
+    PageNotFoundComponent,
+    NotAllowedComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -58,10 +49,10 @@ const appRoutes: Routes = [
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
-    RouterModule.forRoot(appRoutes),
     AngularEditorModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -13,15 +13,22 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faCoffee, faEdit, faTrash} from '@fortawesome/free-solid-svg-icons';
-import {PostFormComponent} from './admin/post/post-form/post-form.component';
+import {PostFormComponent} from './admin/forms/post-form/post-form.component';
 import {FormsModule} from '@angular/forms';
 import {AdminMainComponent} from './admin/ui/main/admin-main.component';
 import {MainComponent} from './ui/main/main.component';
 import {AngularEditorModule} from '@kolkov/angular-editor';
 import {HttpClientModule} from '@angular/common/http';
-import {PageNotFoundComponent} from './ui/page-not-found/page-not-found.component';
+import {NotFoundComponent} from './ui/pages/not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
-import { NotAllowedComponent } from './admin/auth/not-alowed/not-allowed.component';
+import {LoginComponent} from './admin/login/login.component';
+import { HeaderComponent } from './ui/header/header.component';
+import { FooterComponent } from './ui/footer/footer.component';
+import { ResumeComponent } from './ui/pages/resume/resume.component';
+import { ProjectsComponent } from './admin/projects/projects.component';
+import { ProjectFormComponent } from './admin/forms/project-form/project-form.component';
+import { TechnologiesComponent } from './admin/technologies/technologies.component';
+import { TechnologyFormComponent } from './admin/forms/technology-form/technology-form.component';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
@@ -39,8 +46,15 @@ library.add(faEdit);
     PostFormComponent,
     AdminMainComponent,
     MainComponent,
-    PageNotFoundComponent,
-    NotAllowedComponent
+    NotFoundComponent,
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    ResumeComponent,
+    ProjectsComponent,
+    ProjectFormComponent,
+    TechnologiesComponent,
+    TechnologyFormComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

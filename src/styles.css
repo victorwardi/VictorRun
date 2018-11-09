@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+h1, h2, h3, h4, h5, h6{
+font-weight: 300 !important;
+}
+li{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.vr-content{
+  max-width: 1000px;
+}
+
+/*********** RESUME **********/
+
+#resume h3{
+  /*font-size:  1.25rem;*/
+}

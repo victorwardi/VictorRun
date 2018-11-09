@@ -1,53 +1,22 @@
-import {Component, OnInit} from '@angular/core';
-import {PostService} from '../../services/post.service';
-import {Observable} from 'rxjs';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {take} from 'rxjs/operators';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {Post} from '../../models/post.model';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {ListComponent} from '../super-classes/list.component';
+
+const EDIT_PAGE = '/admin/posts/edit/';
+const COLLECTION = 'posts';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent extends ListComponent<Post> {
 
-  posts: Observable<any[]>;
-  deleted: boolean;
-  error: boolean;
-  postSelected;
-
-
-  constructor(private db: AngularFirestore, private postService: PostService, private router: Router) {
+  constructor(private db: AngularFirestore, private router: Router) {
+    super(db, COLLECTION, router, EDIT_PAGE);
   }
 
-  ngOnInit() {
-   this.getPosts();
-  }
-
-  getPosts(){
-    this.posts = this.db.collection('posts').valueChanges().pipe(take(1));
-  }
-
-  editPost(id: string) {
-    console.log('edit');
-    this.router.navigate(['admin/posts/edit', id]);
-  }
-
-  deletePost(id: string) {
-
-    this.postSelected = id;
-    try {
-      this.postService.delete(id);
-      this.deleted = true;
-      this.error = false;
-    } catch (e) {
-      this.error = true;
-      this.deleted = false;
-      console.log(e);
-    }
-    // update list
-    this.getPosts();
-  }
 
 }

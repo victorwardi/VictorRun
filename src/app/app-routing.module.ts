@@ -21,9 +21,9 @@ const appRoutes: Routes = [
       {path: 'posts', component: PostComponent},
       {path: 'posts/add', component: PostFormComponent},
       {path: 'posts/edit/:id', component: PostFormComponent},
-      {path: 'techs', component: TechnologiesComponent},
-      {path: 'techs/add', component: TechnologyFormComponent},
-      {path: 'techs/edit/:id', component: TechnologyFormComponent},
+      {path: 'technologies', component: TechnologiesComponent},
+      {path: 'technologies/add', component: TechnologyFormComponent},
+      {path: 'technologies/edit/:id', component: TechnologyFormComponent},
     ]
   },
   {path: 'login', component: LoginComponent},

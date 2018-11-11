@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Post} from '../../../models/post.model';
-import {ActivatedRoute} from '@angular/router';
 import {AngularEditorConfig} from '@kolkov/angular-editor';
-import {AngularFirestore} from '@angular/fire/firestore';
 import {FormComponent} from '../../super-classes/form.component';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-form',
@@ -21,10 +21,7 @@ export class PostFormComponent extends FormComponent<Post> {
     // uploadUrl: 'v1/images', // if needed ,
   };
 
-  constructor(private route: ActivatedRoute, private db: AngularFirestore) {
-    super(db, 'posts', route);
-    this.item = new Post();
-
-
+  constructor(protected firestore: AngularFirestore, protected activatedRoute: ActivatedRoute, protected router: Router) {
+    super('posts', new Post(), firestore, activatedRoute, router);
   }
 }

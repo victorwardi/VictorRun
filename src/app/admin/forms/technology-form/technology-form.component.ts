@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {FormComponent} from '../../super-classes/form.component';
-import {ActivatedRoute} from '@angular/router';
-import {AngularFirestore} from '@angular/fire/firestore';
 import {Technology} from '../../../models/technology.model';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-technology-form',
@@ -10,9 +11,8 @@ import {Technology} from '../../../models/technology.model';
 })
 export class TechnologyFormComponent extends FormComponent<Technology> {
 
-  constructor(private route: ActivatedRoute, private db: AngularFirestore) {
-    super(db, 'technologies', route);
-    this.item = new Technology();
+  constructor(protected firestore: AngularFirestore, protected activatedRoute: ActivatedRoute, protected router: Router) {
+    super('technologies', new Technology(), firestore, activatedRoute, router);
 
   }
 }

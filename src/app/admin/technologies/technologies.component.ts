@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {ListComponent} from '../super-classes/list.component';
-import {Post} from '../../models/post.model';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Router} from '@angular/router';
+import {Technology} from '../../models/technology.model';
 
-const EDIT_PAGE = '/admin/techs/edit/';
+const EDIT_PAGE = '/admin/technologies/edit/';
 const COLLECTION = 'technologies';
 
 
@@ -12,9 +12,9 @@ const COLLECTION = 'technologies';
   selector: 'app-technologies',
   templateUrl: './technologies.component.html'
 })
-export class TechnologiesComponent extends ListComponent<Post> {
+export class TechnologiesComponent extends ListComponent<Technology> {
 
-  constructor(private db: AngularFirestore, private router: Router) {
+  constructor(protected db: AngularFirestore, protected router: Router) {
     super(db, COLLECTION, router, EDIT_PAGE);
   }
 }

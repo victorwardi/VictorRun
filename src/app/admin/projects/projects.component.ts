@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from '../../services/firebase.service';
-import {Post} from '../../models/post.model';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {Router} from '@angular/router';
-import {Projects} from '@angular/cli/lib/config/schema';
+import {Project} from '../../models/project.model';
 
 @Component({
   selector: 'app-projects',
@@ -11,10 +9,10 @@ import {Projects} from '@angular/cli/lib/config/schema';
 })
 export class ProjectsComponent implements OnInit {
 
-  private fb: FirebaseService<Projects>;
+  private fb: FirebaseService<Project>;
 
-  constructor( private db: AngularFirestore, private router: Router) {
-    this.fb = new FirebaseService<Post>(db, 'projects');
+  constructor( private db: AngularFirestore) {
+    this.fb = new FirebaseService<Project>(db, 'projects');
   }
 
   ngOnInit() {

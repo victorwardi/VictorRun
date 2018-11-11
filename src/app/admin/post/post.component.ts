@@ -14,8 +14,8 @@ const COLLECTION = 'posts';
 })
 export class PostComponent extends ListComponent<Post> {
 
-  constructor(private db: AngularFirestore, private router: Router) {
-    super(db, COLLECTION, router, EDIT_PAGE);
+  constructor(protected firestore: AngularFirestore, protected router: Router) {
+    super(firestore, COLLECTION, router, EDIT_PAGE);
   }
 
 

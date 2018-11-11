@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {FormComponent} from '../../super-classes/form.component';
-import {ActivatedRoute} from '@angular/router';
-import {AngularFirestore} from '@angular/fire/firestore';
 import {Project} from '../../../models/project.model';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-project-form',
@@ -10,7 +10,7 @@ import {Project} from '../../../models/project.model';
 })
 export class ProjectFormComponent extends FormComponent<Project> {
 
-  constructor(private route: ActivatedRoute, private db: AngularFirestore) {
-    super(db, 'projects', new Project(), route);
+  constructor(protected firestore: AngularFirestore, protected activatedRoute: ActivatedRoute, protected router: Router) {
+    super('projects', new Project(), firestore, activatedRoute, router );
   }
 }

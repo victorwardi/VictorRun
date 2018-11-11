@@ -1,24 +1,25 @@
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ID} from '../../models/id.model';
 import {FirebaseService} from '../../services/firebase.service';
-import {OnInit} from '@angular/core';
+import {Inject, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 
 
 export class FormComponent<T extends ID> implements OnInit {
   private fb: FirebaseService<T>;
-  item: T;
   success: boolean;
   error: boolean;
   buttonLabel = 'Save';
   message = '';
 
-  constructor( private db: AngularFirestore, private collection: string, private route: ActivatedRoute) {
-    this.fb = new FirebaseService<T>(db, collection);
+  constructor(protected collection: string, protected item: T, protected firestore: AngularFirestore,
+              protected activatedRoute: ActivatedRoute,
+              protected  router: Router) {
+    this.fb = new FirebaseService<T>(firestore, collection);
   }
 
   ngOnInit() {
-    this.onEdit(this.route);
+    this.onEdit(this.activatedRoute);
   }
 
   onSubmit() {
@@ -38,10 +39,23 @@ export class FormComponent<T extends ID> implements OnInit {
     }
   }
 
-  onDelete(id: string) {
+  onCopy() {
     try {
-      this.fb.delete(id);
+        this.item.id = null;
+        this.item = this.fb.add(this.item);
+        this.alertMessage('Post copied!', true);
+        this.buttonLabel = 'Update';
+    } catch (e) {
+      this.alertMessage('Sorry, it was not possible to copy this post!', false);
+      this.item.id = null;
+    }
+  }
+
+  onDelete() {
+    try {
+      this.fb.delete(this.item.id);
       this.alertMessage('Post has been deleted!', true);
+      this.router.navigate(['/admin/' + this.collection]);
     } catch (e) {
       this.alertMessage('Error on trying to delete this Post!', false);
     }
@@ -55,11 +69,7 @@ export class FormComponent<T extends ID> implements OnInit {
       );
     }
   }
-
-  addNew(){
-    this.item
-  }
-
+  
   alertMessage(message: string, success: boolean) {
     this.message = message;
     this.success = success;

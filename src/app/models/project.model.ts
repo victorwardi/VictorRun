@@ -5,7 +5,7 @@ export class Project {
 
   public id: string;
   public title: string;
-  public description: string;
+  public projectDescription: string;
   public company: Company;
   public technologies: Technology[];
 

@@ -1,3 +1,41 @@
-<p>
-  projects works!
-</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Projects</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <a class="btn btn-sm btn-outline-secondary" routerLink="add" role="button">New</a>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-success" role="alert" *ngIf="deleted">
+  Post {{itemSelected}} was deleted!
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  Something went wrong! It was not possible to delete tech: {{itemSelected}}.
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tech of items | async">
+      <td>{{tech.id}}</td>
+      <td>{{tech.name}}</td>
+      <td>
+
+        <a (click)="onEdit(tech.id)" ><span class="btn-sm btn-info m-1"><fa-icon icon="edit" ></fa-icon></span></a>
+        <a (click)="onDelete(tech.id)"><span class="btn-sm btn-danger m-1"><fa-icon icon="trash" ></fa-icon></span></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="loader mx-auto" *ngIf="!(items | async)">
+  </div>
+</div>
+
+

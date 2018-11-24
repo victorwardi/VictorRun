@@ -1,0 +1,43 @@
+<div class="alert" [ngClass]="success ? 'alert-success' : 'alert-danger'" role="alert" *ngIf="success || error">
+  {{message}}
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h4 class="mb-0"><span  class="font-weight-bold"*ngIf="item.name">{{item.name}}&nbsp;</span><span class="post-title-disabled" *ngIf="!item.name">Project name...</span></h4>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <!--<a class="btn btn-sm btn-outline-secondary" role="button" (click)="addNew()">New</a>-->
+      <a class="btn btn-sm btn-outline-secondary" role="button" routerLink="/admin/posts/add">New</a>
+    </div>
+  </div>
+</div>
+<form #projectForm="ngForm">
+  <div class="form-group">
+    <label for="name">Title </label>
+    <input [(ngModel)]="item.name" name="name" type="text" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="projectDescription">Description </label>
+    <input [(ngModel)]="item.projectDescription" name="projectDescription" type="text" class="form-control" id="projectDescription">
+  </div>
+  <!--<div class="form-group">-->
+    <!--<label for="company">Company </label>-->
+    <!--<input [(ngModel)]="item.company.name" name="company" type="text" class="form-control" id="company">-->
+  <!--</div>-->
+
+  <div class="form-group">
+    <label>Technologies </label>
+      <div class="form-check"  *ngFor="let tech of technologies">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="{{tech.name}}" id="{{tech.id}}" value="{{tech.name}}" checked>
+          {{tech.name}}
+        </label>
+      </div>
+  </div>
+  <div class="text-right">
+    <button type="button" (click)="onSubmit()" class="btn btn-primary">{{buttonLabel}}</button>
+    <button type="button" (click)="onCopy()" class="btn btn-info ml-2" *ngIf=" buttonLabel === 'Update'">Save as a Copy</button>
+    <button type="button" (click)="onDelete()" class="btn btn-danger ml-2" *ngIf=" buttonLabel === 'Update'">Delete</button>
+    <a routerLink="../../" class="btn btn-secondary ml-2">Return</a>
+  </div>
+</form>

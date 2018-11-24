@@ -22,7 +22,7 @@ export class FirebaseService<T extends ID> {
   }
 
   getList(): Observable<any[]> {
-    return this._db.collection(this._collectionName).valueChanges().pipe(take(1));
+     return this._db.collection(this._collectionName).valueChanges().pipe(take(1));
   }
 
   get(id: string): any {

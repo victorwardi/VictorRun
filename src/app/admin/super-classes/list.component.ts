@@ -1,7 +1,7 @@
 import {FirebaseService} from '../../services/firebase.service';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
-import {DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {ID} from '../../models/id.model';
 
@@ -23,9 +23,6 @@ export class ListComponent<T extends ID> implements OnInit {
   ngOnInit() {
     this.getList();
   }
-
-
-
 
   onEdit(itemSelected: string) {
     this.r.navigate([this.editPage, itemSelected]);

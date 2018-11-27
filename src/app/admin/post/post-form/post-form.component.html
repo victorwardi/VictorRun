@@ -15,10 +15,10 @@
 <form #postForm="ngForm">
   <div class="form-group">
     <label for="post-title">Title </label>
-    <input [(ngModel)]="item.title" name="title" type="text" class="form-control" id="post-title">
+    <input [(ngModel)]="item.title" name="title" type="text" class="form-control" id="post-title" (change)="onChangeData()">
   </div>
   <div class="form-group">
-    <angular-editor  [(ngModel)]="item.content" [config]="editorConfig" name="content"></angular-editor>
+    <angular-editor  [(ngModel)]="item.content" [config]="editorConfig" name="content" (change)="onChangeData()"></angular-editor>
     <!--<textarea [(ngModel)]="post.content"  name="content" class="form-control" id="post-content" rows="3"></textarea>-->
   </div>
   <div class="text-right">

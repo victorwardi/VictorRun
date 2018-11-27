@@ -23,13 +23,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let tech of items | async">
-      <td>{{tech.id}}</td>
-      <td>{{tech.name}}</td>
+    <tr *ngFor="let project of items | async">
+      <td>{{project.id}}</td>
+      <td>{{project.name}}</td>
       <td>
 
-        <a (click)="onEdit(tech.id)" ><span class="btn-sm btn-info m-1"><fa-icon icon="edit" ></fa-icon></span></a>
-        <a (click)="onDelete(tech.id)"><span class="btn-sm btn-danger m-1"><fa-icon icon="trash" ></fa-icon></span></a>
+        <a (click)="onEdit(project.id)" ><span class="btn-sm btn-info m-1"><fa-icon icon="edit" ></fa-icon></span></a>
+        <a (click)="onDelete(project.id)"><span class="btn-sm btn-danger m-1"><fa-icon icon="trash" ></fa-icon></span></a>
       </td>
     </tr>
     </tbody>

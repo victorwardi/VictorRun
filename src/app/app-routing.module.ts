@@ -12,6 +12,7 @@ import {TechnologyFormComponent} from './admin/technologies/technology-form/tech
 import {TechnologiesComponent} from './admin/technologies/technologies.component';
 import {ProjectsComponent} from './admin/projects/projects.component';
 import {ProjectFormComponent} from './admin/projects/project-form/project-form.component';
+import {CanDeactivateGuard} from './services/can-deactivate-guard.service';
 
 
 const appRoutes: Routes = [
@@ -22,16 +23,16 @@ const appRoutes: Routes = [
     path: 'admin',  canActivate: [AuthGuardService], component: AdminComponent, children: [
       // POSTS
       {path: 'posts', component: PostComponent},
-      {path: 'posts/add', component: PostFormComponent},
-      {path: 'posts/edit/:id', component: PostFormComponent},
+      {path: 'posts/add', component: PostFormComponent, canDeactivate: [CanDeactivateGuard]},
+      {path: 'posts/edit/:id', component: PostFormComponent, canDeactivate: [CanDeactivateGuard]},
       // TECHNOLOGIES
       {path: 'technologies', component: TechnologiesComponent},
-      {path: 'technologies/add', component: TechnologyFormComponent},
-      {path: 'technologies/edit/:id', component: TechnologyFormComponent},
+      {path: 'technologies/add', component: TechnologyFormComponent, canDeactivate: [CanDeactivateGuard]},
+      {path: 'technologies/edit/:id', component: TechnologyFormComponent, canDeactivate: [CanDeactivateGuard]},
       // PROJECTS
       {path: 'projects', component: ProjectsComponent},
-      {path: 'projects/add', component: ProjectFormComponent},
-      {path: 'projects/edit/:id', component: ProjectFormComponent},
+      {path: 'projects/add', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard]},
+      {path: 'projects/edit/:id', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard]},
     ]
   },
   {path: 'login', component: LoginComponent},

@@ -1,12 +1,8 @@
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {take} from 'rxjs/operators';
 import {ID} from '../models/id.model';
-import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class FirebaseService<T extends ID> {
 
   collection: AngularFirestoreCollection<T>;

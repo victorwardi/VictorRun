@@ -32,7 +32,7 @@ const appRoutes: Routes = [
       // PROJECTS
       {path: 'projects', component: ProjectsComponent},
       {path: 'projects/add', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard]},
-      {path: 'projects/edit/:id', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard]},
+      {path: 'projects/edit/:id', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard] },
     ]
   },
   {path: 'login', component: LoginComponent},

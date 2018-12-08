@@ -77,6 +77,11 @@ export class FormComponent<T extends ID> implements OnInit, CanDeactivateGuard {
         }
     }
 
+    onAddNew() {
+    this.router.navigate(['../../', 'add'], {relativeTo: this.activatedRoute});
+
+    }
+
     alertMessage(message: string, success: boolean) {
         this.message = message;
         this.success = success;

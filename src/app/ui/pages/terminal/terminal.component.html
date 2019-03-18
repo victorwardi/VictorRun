@@ -1,0 +1,37 @@
+<div class="container m-4 pb-5 terminal">
+
+    <div class="row ">
+        <div class="col">
+            Victor.Run - Resume - Terminal
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col terminal-body">
+            <div class="terminal-commands" #customScrollbar id="custom-scrollbar">
+
+                <div *ngFor="let commandLine of terminalLines; let last = last" [innerHTML]="commandLine">
+                    {{last ? scrollTerminalToBottom() : ''}}
+                </div>
+
+
+                <div class="terminal-command-input">
+                    <input type="text"
+                           id="commandInput"
+                           #commandInputid
+                           (keyup.enter)="onEnter(commandInputid.value)"
+                           [(ngModel)]="commandInput"
+                           name="commandInput"
+                           autofocus/>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>

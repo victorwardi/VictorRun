@@ -22,13 +22,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {NotFoundComponent} from './ui/pages/not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './admin/login/login.component';
-import { HeaderComponent } from './ui/header/header.component';
-import { FooterComponent } from './ui/footer/footer.component';
-import { ResumeComponent } from './ui/pages/resume/resume.component';
-import { ProjectsComponent } from './admin/projects/projects.component';
-import { ProjectFormComponent } from './admin/projects/project-form/project-form.component';
-import { TechnologiesComponent } from './admin/technologies/technologies.component';
-import { TechnologyFormComponent } from './admin/technologies/technology-form/technology-form.component';
+import {HeaderComponent} from './ui/header/header.component';
+import {FooterComponent} from './ui/footer/footer.component';
+import {ResumeComponent} from './ui/pages/resume/resume.component';
+import {ProjectsComponent} from './admin/projects/projects.component';
+import {ProjectFormComponent} from './admin/projects/project-form/project-form.component';
+import {TechnologiesComponent} from './admin/technologies/technologies.component';
+import {TechnologyFormComponent} from './admin/technologies/technology-form/technology-form.component';
+import {ChartsModule} from 'ng2-charts';
+import { TerminalComponent } from './ui/pages/terminal/terminal.component';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
@@ -37,39 +39,41 @@ library.add(faEdit);
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminComponent,
-    AdminNavbarComponent,
-    AdminMenuComponent,
-    PostComponent,
-    PostFormComponent,
-    AdminMainComponent,
-    MainComponent,
-    NotFoundComponent,
-    LoginComponent,
-    HeaderComponent,
-    FooterComponent,
-    ResumeComponent,
-    ProjectsComponent,
-    ProjectFormComponent,
-    TechnologiesComponent,
-    TechnologyFormComponent
-  ],
-  imports: [
-    AngularFireModule.initializeApp(environment.firebase),
-    // AngularFireStorageModule,
-    AngularFirestoreModule,
-    BrowserModule,
-    NgbModule,
-    FontAwesomeModule,
-    AngularEditorModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        AdminComponent,
+        AdminNavbarComponent,
+        AdminMenuComponent,
+        PostComponent,
+        PostFormComponent,
+        AdminMainComponent,
+        MainComponent,
+        NotFoundComponent,
+        LoginComponent,
+        HeaderComponent,
+        FooterComponent,
+        ResumeComponent,
+        ProjectsComponent,
+        ProjectFormComponent,
+        TechnologiesComponent,
+        TechnologyFormComponent,
+        TerminalComponent
+    ],
+    imports: [
+        AngularFireModule.initializeApp(environment.firebase),
+        // AngularFireStorageModule,
+        AngularFirestoreModule,
+        BrowserModule,
+        NgbModule,
+        FontAwesomeModule,
+        AngularEditorModule,
+        FormsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        ChartsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 
 })
 export class AppModule {

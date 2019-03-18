@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+
+.terminal {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.terminal-body {
+    font-family: 'Roboto Mono', Consolas, Menlo, Monaco, Courier, monospace;
+
+}
+
+.terminal-command-input{
+
+}
+
+.terminal-command-input input {
+
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    width: 90%;
+    font: inherit;
+    border: none;
+    color: inherit;
+
+}
+.terminal-command-error{
+    color: red;
+
+}
+.terminal-commands {
+
+
+    height: 380px;
+    overflow-y: auto;
+position : relative; bottom:0;
+
+
+}
+
+
+.terminal-commands p{
+    margin: 0;
+}
+.terminal-command:before,
+.terminal-command-input:before
+{ font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
+
+    color: #32ffd0;
+    margin-right: 10px;
+    display: inline;
+}
+
+.terminal-body > li {
+    color: #ff2a25;
+    font-size: 10px;
+
+}
+
+.terminal-reponse:before {
+
+    content: '>_';
+
+    color: #d9515d;
+    margin-right: 10px;
+
+}
+
+/***Work***/
+.company-title{
+    font-size: 20px;
+
+}
+
+
+
+#custom-scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#custom-scrollbar::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#custom-scrollbar::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+#custom-scrollbar::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}

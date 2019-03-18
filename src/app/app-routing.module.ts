@@ -13,6 +13,7 @@ import {TechnologiesComponent} from './admin/technologies/technologies.component
 import {ProjectsComponent} from './admin/projects/projects.component';
 import {ProjectFormComponent} from './admin/projects/project-form/project-form.component';
 import {CanDeactivateGuard} from './services/can-deactivate-guard.service';
+import {TerminalComponent} from './ui/pages/terminal/terminal.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
       {path: 'projects/edit/:id', component: ProjectFormComponent, canDeactivate: [CanDeactivateGuard] },
     ]
   },
+  {path: 'terminal', component: TerminalComponent},
   {path: 'login', component: LoginComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: '**', redirectTo: '/not-found'}

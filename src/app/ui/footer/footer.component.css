@@ -1,0 +1,14 @@
+.vr-footer{
+    background-color: #333333;
+    color: #fff;
+}
+.vr-footer ul{
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.vr-footer-infos{
+    background-color: #222222;
+    font-size: small;
+}

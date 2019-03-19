@@ -1,59 +1,55 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+.vr-terminal-resume {
+    background-color: #1E2E37;
+}
 
-.terminal {
+.vr-terminal {
     background-color: #333333;
     color: #ffffff;
     padding: 20px;
-}
-
-.terminal-body {
+    border: 1px solid #29abe2;
+    font-size: 14px;
     font-family: 'Roboto Mono', Consolas, Menlo, Monaco, Courier, monospace;
-
 }
 
-.terminal-command-input{
 
-}
-
-.terminal-command-input input {
+.vr-terminal input {
 
     outline: none;
     background-color: transparent;
-    margin: 0;
     width: 90%;
     font: inherit;
     border: none;
     color: inherit;
+    caret-color: #29abe2;
 
 }
-.terminal-command-error{
-    color: red;
 
+.terminal-command-error {
+    color: #8becff;
 }
+
 .terminal-commands {
-
-
     height: 380px;
     overflow-y: auto;
-position : relative; bottom:0;
-
-
+    position: relative;
+    bottom: 0;
 }
 
 
-.terminal-commands p{
-    margin: 0;
-}
-.terminal-command:before,
-.terminal-command-input:before
-{ font-family: "Font Awesome 5 Free";
+.terminal-command-input:before {
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f0da";
+    content: "\f120";
 
-    color: #32ffd0;
+    color: #29abe2;
     margin-right: 10px;
     display: inline;
+}
+
+.vr-terminal-icon{
+    color:  #29abe2;
 }
 
 .terminal-body > li {
@@ -62,39 +58,29 @@ position : relative; bottom:0;
 
 }
 
-.terminal-reponse:before {
-
-    content: '>_';
-
-    color: #d9515d;
-    margin-right: 10px;
-
-}
 
 /***Work***/
-.company-title{
+.company-title {
     font-size: 20px;
 
 }
 
 
-
-#custom-scrollbar::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
+#custom-scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #00406b;
+    border-radius: 5px;
 }
 
-#custom-scrollbar::-webkit-scrollbar
-{
+#custom-scrollbar::-webkit-scrollbar {
     width: 10px;
-    background-color: #F5F5F5;
+    background-color: #00406b;
+    border-radius: 5px;
 }
 
-#custom-scrollbar::-webkit-scrollbar-thumb
-{
-    background-color: #000000;
-    border: 2px solid #555555;
+#custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #29abe2;
+    border-radius: 5px;
 }
 
 #custom-scrollbar::-webkit-scrollbar-button {

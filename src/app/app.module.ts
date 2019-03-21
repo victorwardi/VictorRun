@@ -31,6 +31,7 @@ import {TechnologiesComponent} from './admin/technologies/technologies.component
 import {TechnologyFormComponent} from './admin/technologies/technology-form/technology-form.component';
 import {ChartsModule} from 'ng2-charts';
 import { TerminalComponent } from './ui/pages/terminal/terminal.component';
+import { RepositoriesComponent } from './ui/pages/repositories/repositories.component';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
@@ -57,7 +58,8 @@ library.add(faEdit);
         ProjectFormComponent,
         TechnologiesComponent,
         TechnologyFormComponent,
-        TerminalComponent
+        TerminalComponent,
+        RepositoriesComponent
     ],
     imports: [
         AngularFireModule.initializeApp(environment.firebase),

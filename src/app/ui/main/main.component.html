@@ -1,58 +1,10 @@
 <app-header></app-header>
-
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
 <app-terminal></app-terminal>
+<!--<app-repositories></app-repositories>-->
 <app-footer></app-footer>
-<!--<button (click)="scrollToElement(projects)"></button>
 
 
-<div class="container-fluid ">
-    <div class="row mx-auto">
 
-
-        <div class="col text-center">
-
-            <img src="../../../assets/images/logo.png" width="100%" class="logo-width m-4"/>
-        </div>
-
-    </div>
-
-    <div class="row" *ngIf="userLoaded" style="background: #ffffff">
-        <div class="col  text-center">
-            <h1>{{user.name}}</h1>
-        </div>
-    </div>
-
-    <p class="h1" #projects >Projects</p>
-    <div class="row" *ngIf="reposLoaded">
-        <div class="col-md-4 mx-auto m-4">
-
-            <canvas baseChart
-                    [data]="doughnutChartData"
-                    [labels]="doughnutChartLabels"
-                    [chartType]="doughnutChartType"
-                    [colors]="doughnutChartColors"
-                    (chartClick)="chartClicked($event)"
-            ></canvas>
-
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-md-4 card m-3  mx-auto card-language"
-             *ngFor="let repo of repos">
-            <div class="card-header"><div class="card-title-mark" [ngStyle]="{'background':repo.color}"></div>{{repo.language}}</div>
-            <div class="card-body">
-                <h5 class="card-title"><b>{{repo.name}}</b></h5>
-                <p class="card-text">{{repo.description}}</p>
-            </div>
-            <div class="card-footer"><a href="{{repo.html_url}}"><i class="fab fa-github"></i></a></div>
-        </div>
-    </div>
-
-
-</div>-->
 
 

@@ -1,35 +1,37 @@
-<div class="container-fluid py-5 vr-terminal-resume">
-    <h1 class="m-4">Terminal Resume</h1>
+<div class="vr-terminal-resume">
+    <div class="vr-content m-auto py-5">
+        <h1 class="py-4 text-center ">Terminal Resume</h1>
 
-    <div class="row w-100 mx-4">
-        <div class="col-8 vr-terminal m-auto" (mouseenter)="onMouseEnterTerminal()" >
+        <div class="row px-4">
+            <div class="col-md-10 vr-terminal m-auto" (mouseenter)="onMouseEnterTerminal()">
 
-            <div class="row ">
-                <div class="col">
-                    Victor.Run - Type 0 (zero), 'h' or help to see commands.
+                <div class="row ">
+                    <div class="col">
+                        Victor.Run - Type 0 (zero), 'h' or help to see commands.
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="row">
-                <div class="col">
+                <div class="row">
+                    <div class="col">
 
-                    <div class="terminal-commands" #customScrollbar id="custom-scrollbar">
+                        <div class="terminal-commands" #customScrollbar id="custom-scrollbar">
 
-                        <div class="vr-terminal-response my-2"
-                             *ngFor="let commandLine of terminalLines; let last = last" [innerHTML]="commandLine">
-                            {{last ? scrollTerminalToBottom() : ''}}
-                        </div>
+                            <div class="vr-terminal-response my-2"
+                                 *ngFor="let commandLine of terminalLines; let last = last" [innerHTML]="commandLine">
+                                {{last ? scrollTerminalToBottom() : ''}}
+                            </div>
 
-                        <div class="terminal-command-input my-2">
-                            <input type="text"
-                                   id="commandInput"
-                                   #terminalInput
-                                   (keyup.enter)="onUserClickEnter(terminalInput.value)"
-                                   [(ngModel)]="commandInput"
-                                   name="commandInput"
-                                   autofocus/>
+                            <div class="terminal-command-input my-2">
+                                <input type="text"
+                                       id="commandInput"
+                                       #terminalInput
+                                       (keyup.enter)="onUserClickEnter(terminalInput.value)"
+                                       [(ngModel)]="commandInput"
+                                       name="commandInput"
+                                       autofocus/>
 
+                            </div>
                         </div>
                     </div>
                 </div>

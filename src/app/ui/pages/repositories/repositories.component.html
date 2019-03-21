@@ -1,0 +1,62 @@
+<div class="vr-repositories">
+    <div class="vr-content m-auto py-5">
+        <h1 class="py-3 text-center">GitHub - Projects</h1>
+        <p class="py-3 text-center" >Do you want do see how I code? Check it out some of my github's <i class="fab fa-github mx-2"></i> repositories.</p>
+        <div class="row" *ngIf="reposLoaded">
+            <div class="col-md-4 mx-auto p-4">
+                <canvas baseChart
+                        [data]="doughnutChartData"
+                        [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType"
+                        [colors]="doughnutChartColors"
+                        (chartClick)="chartClicked($event)"
+                ></canvas>
+            </div>
+        </div>
+
+
+       <!-- <div class="row">
+            <div class="col-md-4 card m-3  mx-auto card-language"
+                 *ngFor="let repo of repos">
+                <div class="card-header">
+                    <div class="card-title-mark" [ngStyle]="{'background':repo.color}"></div>
+                    {{repo.language}}</div>
+                <div class="card-body">
+                    <h5 class="card-title"><b>{{repo.name}}</b></h5>
+                    <p class="card-text">{{repo.description}}</p>
+                </div>
+                <div class="card-footer"><a href="{{repo.html_url}}"><i class="fab fa-github"></i></a></div>
+            </div>
+        </div>-->
+
+       <!-- <div class="row">
+            <div class="col-12 py-4">
+
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Language</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Description</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  *ngFor="let repo of repos">
+                        <th scope="row"><div class="card-title-mark" [ngStyle]="{'background':repo.color}"></div>
+                            {{repo.language}}</th>
+                        <td>{{repo.name}}</td>
+                        <td>{{repo.description}}</td>
+                        &lt;!&ndash;<td><a href="{{repo.html_url}}"><i class="fab fa-github"></i></a></td>&ndash;&gt;
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>-->
+
+
+
+    </div>
+</div>

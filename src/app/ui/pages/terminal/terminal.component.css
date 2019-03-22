@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
+
 .vr-terminal-resume {
-    background-color: #1E2E37;
+    background-color: var(--terminalColor);
+    --terminalAccentColor: #29abe2;
 }
 
 .vr-terminal {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: var(--terminalColor);
     padding: 20px;
-    border: 1px solid #29abe2;
+    border: 1px solid var(--terminalAccentColor);
     font-size: 14px;
     font-family: 'Roboto Mono', Consolas, Menlo, Monaco, Courier, monospace;
 }
@@ -22,7 +23,7 @@
     font: inherit;
     border: none;
     color: inherit;
-    caret-color: #29abe2;
+    caret-color: var(--terminalAccentColor);
 
 }
 
@@ -42,20 +43,13 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f120";
-
-    color: #29abe2;
+    color: var(--terminalAccentColor);
     margin-right: 10px;
     display: inline;
 }
 
 .vr-terminal-icon{
-    color:  #29abe2;
-}
-
-.terminal-body > li {
-    color: #ff2a25;
-    font-size: 10px;
-
+    color: var(--terminalAccentColor);
 }
 
 
@@ -79,7 +73,7 @@
 }
 
 #custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #29abe2;
+    background-color: var(--terminalAccentColor);
     border-radius: 5px;
 }
 

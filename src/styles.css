@@ -1,3 +1,15 @@
+
+:root{
+
+    --bgColor: #2b2b2b;
+    --textColor: #c7c7c7;
+    --textLinkHover: #ffffff;
+    --terminalColor: #050a15;
+    --repositoriesColor: #262a2d;
+    --footerColor: #2d2d32;
+    --headerColor: #272727;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300 !important;
 }
@@ -7,15 +19,25 @@ html {
 }
 
 body {
- color: #DCDCDC !important;
-    background-color: #333333 !important;
+ color: var(--textColor) !important;
+    background-color: var(--bgColor)!important;
 }
 
-li {
-    margin-top: 10px;
-    margin-bottom: 10px;
+a{
+    color: var(--textColor) !important;
 }
 
+a:hover{
+    text-decoration: none !important;
+    color: var(--textLinkHover) !important;
+}
+
+.vr-logo {
+    width: 50px;
+}
+
+
+/************  LOADING *************/
 .centered {
     position: fixed;
     top: 50%;
@@ -23,110 +45,6 @@ li {
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
 }
-
-.vr-content {
-    max-width: 1000px;
-
-}
-
-
-.vr-full-width-bg {
-    margin: 0 -13rem;
-    padding: 0 13rem;
-    background-color: #000046;
-}
-
-@media screen and (max-width: 1170px) {
-    .vr-full-width-bg {
-        margin: 0 -6rem;
-        padding: 0 6rem;
-        background-color: #0000ee;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .vr-full-width-bg {
-        margin: 0 -2rem;
-        padding: 0 2rem;
-        background-color: #989cee;
-    }
-}
-
-.vr-component {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
-}
-
-
-
-.logo-width {
-    width: 50px;
-}
-
-
-.vertical-center {
-    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
-
-    display: flex;
-    align-items: center;
-}
-
-
-
-
-
-.card-language {
-
-    max-width: 18rem !important;
-    padding: 0px !important;
-
-}
-
-.card-title-mark {
-    height: 20px;
-    width: 20px;
-    margin-top: 2px;
-    margin-right: 10px;
-    display: block;
-    float: left;
-}
-
-/*********** RESUME **********/
-
-#resume h3 {
-    /*font-size:  1.25rem;*/
-}
-
-
-/************  ANIMATIONS *************/
-
-.fade.ng-enter {
-    animation: 2s appear;
-}
-
-.fade.ng-leave {
-    animation: 1s disappear;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes disappear {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 
 .lds-ripple {
     display: inline-block;

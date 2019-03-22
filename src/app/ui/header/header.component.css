@@ -1,0 +1,8 @@
+.vr-header{
+
+    background-color: var(--headerColor);
+}
+
+.vr-header i.fas {
+    margin-right: 5px;
+}

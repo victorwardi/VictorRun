@@ -32,6 +32,8 @@ export class RepositoriesComponent implements OnInit {
     constructor(private githubService: GithubService) {
     }
 
+
+
     ngOnInit() {
 
         console.log('on init');

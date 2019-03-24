@@ -1,13 +1,15 @@
 
 :root{
 
-    --bgColor: #2b2b2b;
+    --bgColor: #263238;
     --textColor: #c7c7c7;
     --textLinkHover: #ffffff;
-    --terminalColor: #050a15;
-    --repositoriesColor: #262a2d;
-    --footerColor: #2d2d32;
-    --headerColor: #272727;
+    --terminalColor: #1c2331;
+    --repositoriesColor: #37474f;
+    --footerColor: #151515;
+    --headerColor: #151515;
+    --tealColor: #009688;
+    --tealColorAccent: #64ffda;
 }
 
 h1, h2, h3, h4, h5, h6 {

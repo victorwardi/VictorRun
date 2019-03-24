@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {User} from "../../../models/user.model";
-import {Repo} from "../../../models/repo.model";
-import {GithubService} from "../../../services/github.service";
-import {LanguageColor} from "../../../models/enuns/language-color.enum";
+import {Component, OnInit} from '@angular/core';
+import {User} from '../../../models/user.model';
+import {Repo} from '../../../models/repo.model';
+import {GithubService} from '../../../services/github.service';
+import {LanguageColor} from '../../../models/enuns/language-color.enum';
 
 @Component({
-  selector: 'app-repositories',
-  templateUrl: './repositories.component.html',
-  styleUrls: ['./repositories.component.css']
+    selector: 'app-repositories',
+    templateUrl: './repositories.component.html',
+    styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
 
@@ -31,7 +31,6 @@ export class RepositoriesComponent implements OnInit {
 
     constructor(private githubService: GithubService) {
     }
-
 
 
     ngOnInit() {
@@ -93,10 +92,17 @@ export class RepositoriesComponent implements OnInit {
 
         if (active.length > 0) {
             const languageSelected = this.doughnutChartLabels[active[0]._index];
-            console.log(languageSelected);
-            this.repos = this.reposOriginal.filter(function (repo) {
-                return repo.language === languageSelected;
-            });
+
+            const languageIsOnTheReposList = this.repos.find(repo => repo.language === languageSelected) !== undefined;
+            const reposIsOriginal = this.repos.length === this.reposOriginal.length;
+
+            const toggleLanguage = languageIsOnTheReposList && reposIsOriginal;
+
+            if (toggleLanguage) {
+                this.repos = this.reposOriginal.filter(repo => repo.language === languageSelected);
+            } else {
+                this.repos = this.reposOriginal;
+            }
         }
     }
 

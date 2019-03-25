@@ -7,7 +7,7 @@
 }
 
 .vr-terminal {
-    background-color: var(--terminalColor);
+    background-color: var(--terminalBgColor);
     padding: 20px;
     border: 1px solid var(--terminalAccentColor);
     font-size: 14px;
@@ -62,13 +62,13 @@
 
 #custom-scrollbar::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #00406b;
+    background-color:var(--terminalColor);
     border-radius: 5px;
 }
 
 #custom-scrollbar::-webkit-scrollbar {
     width: 10px;
-    background-color: #00406b;
+    background-color: var(--terminalColor);
     border-radius: 5px;
 }
 

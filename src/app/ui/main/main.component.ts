@@ -11,4 +11,6 @@ import {LanguageColor} from '../../models/enuns/language-color.enum';
 })
 export class MainComponent {
 
+
+
 }

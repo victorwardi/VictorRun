@@ -1,0 +1,49 @@
+
+.vr-skills ul{
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.vr-skills li{
+    padding: 10px;
+}
+
+
+
+.vr-skill-label {
+
+}
+
+.vr-skill .progress{
+    background-color: #c8d1d4 !important;
+    height: 1.5rem !important;
+}
+
+.vr-skill-progress-beginner {
+    background-color: var(--tealColor) !important;
+    width: 25% !important;
+}
+
+
+.vr-skill-progress-intermediate {
+    background-color: var(--tealColor) !important;
+    width: 50% !important;
+}
+
+
+
+
+.vr-skill-progress-advanced {
+    background-color: var(--tealColor) !important;
+    width: 75% !important;
+}
+
+
+
+.vr-skill-progress-expert {
+    background-color: var(--tealColor) !important;
+    width: 100% !important;
+}
+
+

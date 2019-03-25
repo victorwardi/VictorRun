@@ -1,13 +1,14 @@
 
 :root{
 
-    --bgColor: #263238;
-    --textColor: #c7c7c7;
-    --textLinkHover: #ffffff;
-    --terminalColor: #1c2331;
-    --repositoriesColor: #37474f;
-    --footerColor: #151515;
-    --headerColor: #151515;
+    --bgColor: #0d141d;
+    --textColor: #d4d4d4;
+    --textLinkHover: #64ffda;
+    --terminalColor: #080a10;
+    --terminalBgColor: #2c2e38;
+    --repositoriesColor: #121a23;
+    --headerColor: #0d141d;
+    --footerColor: #0d141d;
     --tealColor: #009688;
     --tealColorAccent: #64ffda;
 }
@@ -56,7 +57,7 @@ a:hover{
 }
 .lds-ripple div {
     position: absolute;
-    border: 4px solid #fff;
+    border: 4px solid #64ffda;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;

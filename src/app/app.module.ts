@@ -32,6 +32,10 @@ import {TechnologyFormComponent} from './admin/technologies/technology-form/tech
 import {ChartsModule} from 'ng2-charts';
 import { TerminalComponent } from './ui/pages/terminal/terminal.component';
 import { RepositoriesComponent } from './ui/pages/repositories/repositories.component';
+import { ExperienceComponent } from './ui/pages/experience/experience.component';
+import { HomeComponent } from './ui/pages/home/home.component';
+import { EducationComponent } from './ui/pages/education/education.component';
+import { SkillsComponent } from './ui/pages/skills/skills.component';
 
 // Add an icon to the library for convenient access in other components
 library.add(faCoffee);
@@ -59,7 +63,11 @@ library.add(faEdit);
         TechnologiesComponent,
         TechnologyFormComponent,
         TerminalComponent,
-        RepositoriesComponent
+        RepositoriesComponent,
+        ExperienceComponent,
+        HomeComponent,
+        EducationComponent,
+        SkillsComponent
     ],
     imports: [
         AngularFireModule.initializeApp(environment.firebase),

@@ -18,6 +18,7 @@ import {ExperienceComponent} from "./ui/pages/experience/experience.component";
 import {HomeComponent} from "./ui/pages/home/home.component";
 import {EducationComponent} from "./ui/pages/education/education.component";
 import {SkillsComponent} from './ui/pages/skills/skills.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 const appRoutes: Routes = [
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes),
+      BrowserAnimationsModule,
   ],
   exports: [RouterModule]
 })

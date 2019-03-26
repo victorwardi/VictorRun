@@ -3,162 +3,44 @@
     <div class="container m-auto py-5 vr-skills">
         <h1 class="py-4 text-center ">SKILLS</h1>
         <p class="py-3  text-center">
-            This is my complete resume. If you want a more interactive approach, try my terminal resumE.</p>
+            This is my complete resume. If you want a more interactive approach, try my terminal resume.</p>
         <section id="technologies" class="row pb-5">
-             <div class="col-sm-10 pt-4 mx-auto">
+            <div class="col-sm-10 pt-4 mx-auto">
                 <div class="row">
                     <div class="col-6">
-                        <h3 class="p-2 text-center">Day-to-day Coding</h3>
-                        <ul>
-                            <li>
+                        <h3 class="p-3 text-center">Day-to-day Coding</h3>
+                        <ul class="px-5">
+                            <li *ngFor="let skill of skills | keyvalue " class="py-3">
                                 <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Java
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
+                                    <div class="col-3 vr-skill-label">{{skill.key}}</div>
+                                    <div class="col-9 vr-skill-progress">
                                         <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div aria-valuemax="100" aria-valuemin="0"
+                                                 aria-valuenow="10"
+                                                 class="progress-bar vr-skill-progress-bg"
+                                                 role="progressbar"
+                                                 [style.width.%]=skill.value*10>
                                             </div>
                                         </div>
                                     </div>
-                                </div></li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        HTML
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        CSS
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Spring
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Angular
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        JavaScript
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div></li>
+                                </div>
+                            </li>
                         </ul>
+
                     </div>
                     <div class="col-6">
-                        <h3 class="p-2 text-center">Already Worked With</h3>
-                        <ul>
-                            <li>
+                        <h3 class="p-3 text-center">Already Worked With</h3>
+                        <ul class="px-5">
+                            <li *ngFor="let skill of skills | keyvalue " class="py-3">
                                 <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        HTML
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
+                                    <div class="col-3 vr-skill-label">{{skill.key}}</div>
+                                    <div class="col-9 vr-skill-progress">
                                         <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        PHP
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-advanced" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Coldfusion
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-expert" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Android
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-intermediate" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row vr-skill">
-                                    <div class="col-4 vr-skill-label">
-                                        Flutter
-                                    </div>
-                                    <div class="col-8 vr-skill-progress">
-                                        <div class="progress">
-                                            <div class="progress-bar vr-skill-progress-beginner" role="progressbar"
-                                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div aria-valuemax="100" aria-valuemin="0"
+                                                 aria-valuenow="10"
+                                                 class="progress-bar vr-skill-progress-bg"
+                                                 role="progressbar"
+                                                 [style.width.%]=skill.value*10>
                                             </div>
                                         </div>
                                     </div>
@@ -169,5 +51,31 @@
                 </div>
             </div>
         </section>
+
+        <div id="skills" class="row pb-5">
+            <div class="col-sm-10 pt-4 mx-auto">
+                <h3 class="p-3 text-center">YEARS OF EXPERIENCE</h3>
+                <ul class="px-5">
+                    <li *ngFor="let skill of skills | keyvalue " class="py-3">
+                        <div class="row vr-skill">
+                            <div class="col-3 vr-skill-label">{{skill.key}}</div>
+                            <div class="col-9 vr-skill-years-progress">
+                                <ng-container *ngFor="let year of maxYearsExperience;">
+                                    <i *ngIf="(year+1) <= skill.value ; else showYearIncomplete" class="fas fa-circle vr-skill-year-complete px-2"></i>
+                                    <ng-template #showYearIncomplete>
+                                        <i class="fas fa-circle vr-skill-year-incomplete px-2"></i>
+                                    </ng-template>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
     </div>
 </div>

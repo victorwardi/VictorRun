@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, SafeHtml} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -67,7 +67,7 @@ library.add(faEdit);
         ExperienceComponent,
         HomeComponent,
         EducationComponent,
-        SkillsComponent
+        SkillsComponent,
     ],
     imports: [
         AngularFireModule.initializeApp(environment.firebase),

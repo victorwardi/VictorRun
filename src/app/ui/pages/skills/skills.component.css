@@ -1,12 +1,14 @@
 
-.vr-skills ul{
-    list-style: none;
-    padding-left: 0;
+.vr-skills {
+    --skillCompleteColor: var(--tealColorAccent);
+    --skillIncompleteColor: #154B4A;
 
 }
 
-.vr-skills li{
-    padding: 10px;
+.vr-skills ul {
+    list-style: none;
+    padding-left: 0;
+
 }
 
 
@@ -15,35 +17,29 @@
 
 }
 
-.vr-skill .progress{
-    background-color: #c8d1d4 !important;
+.vr-skill .progress {
+    background-color: var(--textColor) !important;
     height: 1.5rem !important;
 }
 
-.vr-skill-progress-beginner {
+.vr-skill-progress-bg {
     background-color: var(--tealColor) !important;
-    width: 25% !important;
+
 }
 
 
-.vr-skill-progress-intermediate {
-    background-color: var(--tealColor) !important;
-    width: 50% !important;
+.vr-skill-years-progress > i {
+    font-size: 1.5rem;
+}
+
+.vr-skill-year-complete {
+    color: var(--skillCompleteColor);
+}
+
+.vr-skill-year-incomplete {
+    color: var(--skillIncompleteColor)
 }
 
 
-
-
-.vr-skill-progress-advanced {
-    background-color: var(--tealColor) !important;
-    width: 75% !important;
-}
-
-
-
-.vr-skill-progress-expert {
-    background-color: var(--tealColor) !important;
-    width: 100% !important;
-}
 
 

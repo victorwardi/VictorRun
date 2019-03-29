@@ -1,9 +1,9 @@
 .vr-footer {
     background-color: var(--footerColor);
-}
+  }
 
 .vr-footer-logo{
-    background-color: var(--repositoriesColor);
+    background-color: var(--footerColor);
     width: 100px;
     height: 100px;
     border-radius: 50%;

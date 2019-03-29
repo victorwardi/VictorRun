@@ -24,10 +24,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 const appRoutes: Routes = [
   {path: '', component: MainComponent, children: [
       {path: '', component: HomeComponent},
-      {path: 'resume', component: ResumeComponent},
+      {path: 'resume', component: ResumeComponent },
       {path: 'experience', component: ExperienceComponent},
       {path: 'skills', component: SkillsComponent},
-      {path: 'education', component: EducationComponent},
+      {path: 'education', component: EducationComponent },
       {path: 'run', component: ExperienceComponent},
 
     ]},

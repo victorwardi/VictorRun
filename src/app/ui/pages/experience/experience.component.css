@@ -1,7 +1,6 @@
 /* The actual vr-timeline (the vertical ruler) */
 .vr-timeline {
     position: relative;
-    max-width: 1200px;
     margin: 0 auto;
     --timelineAccentColor: var(--tealColorAccent);
     --timelineColor: var(--tealColor);
@@ -22,7 +21,7 @@
 
 /* Container around content */
 .vr-timeline-container {
-    padding: 10px 50px 10px 60px;
+    padding: 10px 50px 10px 10px;
     position: relative;
     width: 50%;
 
@@ -36,6 +35,7 @@
     width: 60px;
     height: 60px;
     right: -30px;
+    line-height: 45px;
     background-color: var(--timelineAccentColor);
     border: 4px solid var(--timelineAccentColor);
     top: 15px;
@@ -49,11 +49,22 @@
 /*Hack to align in the middle the icon*/
 
 .vr-timeline-content-mark:before {
-    content: "\f1ad";/*buildind*/
+
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
+}
 
+.company > .vr-timeline-content-mark:before {
+    content: "\f1ad"; /*buildind*/
+}
+
+.project > .vr-timeline-content-mark:before {
+    content: "\f5fc"; /*laptop*/
+}
+
+.side-project > .vr-timeline-content-mark:before {
+    content: "\f542"; /*laptop*/
 }
 
 
@@ -62,21 +73,12 @@
     height: 40px;
     right: -20px;
     top: 25px;
+    line-height: 30px;
     font-size: 1rem;
     background-color: var(--timelineColor);
     border-color: var(--timelineColor);
     color: var(--bgColor);
 }
-
-
-.vr-timeline-container-sub  .vr-timeline-content-mark:before {
-    content: "\f5fc"; /*laptop*/
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-
-}
-
 
 
 /* Place the container to the left */
@@ -93,11 +95,14 @@
 /* Place the container to the right */
 .vr-timeline-right .vr-timeline-container {
     left: 50%;
+    margin-left: 60px;
+    margin-right: 10px;
 }
 
 
 .vr-timeline-right .vr-timeline-container-sub .vr-timeline-content {
     width: 90%;
+
 }
 
 .vr-timeline-left-middle .vr-timeline-container {
@@ -108,12 +113,14 @@
 .vr-timeline-right-middle .vr-timeline-container {
     margin-top: -180px;
     left: 50%;
+    margin-left: 60px;
+    margin-right: 10px;
 }
 
 
-
 /* Add arrows to the left container (pointing right) */
-.vr-timeline-left .vr-timeline-container::before {
+.vr-timeline-left .vr-timeline-container::before,
+.vr-timeline-left-middle .vr-timeline-container::before {
     content: ' ';
     height: 0;
     position: absolute;
@@ -127,26 +134,29 @@
 }
 
 /* Add arrows to the right container (pointing left) */
-.vr-timeline-right .vr-timeline-container::before {
+.vr-timeline-right .vr-timeline-container::before,
+.vr-timeline-right-middle .vr-timeline-container::before {
     content: ' ';
     height: 0;
     position: absolute;
     top: 35px;
     width: 0;
     z-index: 1;
-    left: 50px;
+    left: 0px;
     border: solid var(--timelineAccentColor);
     border-width: 10px 10px 10px 0;
     border-color: transparent var(--timelineAccentColor) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
-.vr-timeline-right .vr-timeline-content-mark {
-    left: -30px;
+.vr-timeline-right .vr-timeline-content-mark,
+.vr-timeline-right-middle .vr-timeline-content-mark {
+    left: -90px;
 }
 
-.vr-timeline-right .vr-timeline-container-sub .vr-timeline-content-mark {
-    left: -20px;
+.vr-timeline-right .vr-timeline-container-sub .vr-timeline-content-mark,
+.vr-timeline-right-middle .vr-timeline-container-sub .vr-timeline-content-mark {
+    left: -80px;
 }
 
 
@@ -159,17 +169,20 @@
 }
 
 .vr-timeline-job {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
 .vr-timeline-company {
+    font-size: 1.3rem;
     font-weight: bold;
+    margin-bottom: 0;
 
 }
 
 .vr-timeline-period {
     font-style: italic;
+    color: #696969;
 }
 
 .vr-timeline-project {
@@ -196,28 +209,56 @@
         left: 31px;
     }
 
+
+
     /* Full-width containers */
-    .vr-timeline-container {
+    .vr-timeline-container,
+    .vr-timeline-left .vr-timeline-container,
+    .vr-timeline-left-middle .vr-timeline-container,
+    .vr-timeline-right .vr-timeline-container,
+    .vr-timeline-right-middle .vr-timeline-container{
         width: 100%;
-        padding-left: 70px;
+        padding-left: 75px;
         padding-right: 25px;
+        margin-top: 0px;
+        margin-left: 0px;
+        left: 0px;
     }
 
     /* Make sure that all arrows are pointing leftwards */
-    .vr-timeline-container::before {
-        left: 60px;
+    .vr-timeline-left .vr-timeline-container::before,
+    .vr-timeline-left-middle .vr-timeline-container::before,
+    .vr-timeline-right .vr-timeline-container::before,
+    .vr-timeline-right-middle .vr-timeline-container::before {
+        left: 65px;
         border: medium solid var(--timelineAccentColor);
         border-width: 10px 10px 10px 0;
         border-color: transparent var(--timelineAccentColor) transparent transparent;
     }
 
     /* Make sure all circles are at the same spot */
-    .vr-timeline-left::after, .vr-timeline-right::after {
-        left: 15px;
+    .vr-timeline-content-mark,
+    .vr-timeline-right .vr-timeline-content-mark,
+    .vr-timeline-right-middle .vr-timeline-content-mark,
+    .vr-timeline-left .vr-timeline-content-mark,
+    .vr-timeline-left-middle .vr-timeline-content-mark{
+        left: 0px;
     }
+
+    .vr-timeline-right .vr-timeline-container-sub .vr-timeline-content-mark,
+    .vr-timeline-right-middle .vr-timeline-container-sub .vr-timeline-content-mark
+    .vr-timeline-left .vr-timeline-container-sub .vr-timeline-content-mark,
+    .vr-timeline-left-middle .vr-timeline-container-sub .vr-timeline-content-mark {
+        left: 10px;
+    }
+
+    .vr-timeline-left .vr-timeline-container-sub .vr-timeline-content{
+        margin-left: 0%;
+    }
+
 
     /* Make all right containers behave like the left ones */
     .vr-timeline-right {
-        left: 0%;
+        left: 0px;
     }
 }

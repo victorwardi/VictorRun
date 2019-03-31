@@ -6,3 +6,18 @@
 .vr-header i.fas {
     margin-right: 5px;
 }
+.vr-menu:hover > li a{
+    color: #6d6d6d !important;
+    transition: color 170ms ease-in-out, background-color 170ms ease-in-out;
+}
+
+.vr-menu > li a:hover{
+    color: #32ffd0 !important;
+    transition: color 170ms ease-in-out, background-color 170ms ease-in-out;
+}
+
+
+
+.vr-menu2 {
+
+}

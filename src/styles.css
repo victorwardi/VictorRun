@@ -1,4 +1,3 @@
-
 :root {
 
     --bgColor: #0d141d;
@@ -7,7 +6,7 @@
     --terminalColor: #080a10;
     --terminalBgColor: #2c2e38;
     --repositoriesColor: #121a23;
-    --headerColor: #0d141d;
+    --headerColor: #000d1d;
     --footerColor: #0d141d;
     --tealColor: #009688;
     --tealColorAccent: #64ffda;
@@ -52,6 +51,11 @@ a:hover {
 
 .vr-logo {
     width: 50px;
+}
+
+
+.vr-background-color:nth-of-type(even) {
+    background: #cc0013;
 }
 
 

@@ -19,6 +19,7 @@ import {HomeComponent} from "./ui/pages/home/home.component";
 import {EducationComponent} from "./ui/pages/education/education.component";
 import {SkillsComponent} from './ui/pages/skills/skills.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AboutComponent} from "./ui/pages/about/about.component";
 
 
 const appRoutes: Routes = [
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
       {path: 'experience', component: ExperienceComponent},
       {path: 'skills', component: SkillsComponent},
       {path: 'education', component: EducationComponent },
-      {path: 'run', component: ExperienceComponent},
+      {path: 'runs', component: ExperienceComponent},
+      {path: 'about', component: AboutComponent},
 
     ]},
   {

@@ -1,0 +1,62 @@
+.vr-about{
+   /* background-color: #2c2e38;*/
+}
+
+.vr-about-name{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.vr-about-role{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: #bebebe;
+}
+
+.vr-about-profile img{
+    border: 5px solid var(--tealColor);
+    border-radius: 50%;
+    width: 180px;
+    margin: auto;
+
+}
+.vr-about-section{
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+
+.vr-about-section i{
+    color: var(--textColor);
+    width: 60px;
+    height: 60px;
+    line-height: 58px;
+/*   background-color: var(--tealColorAccent);*/
+    border: 2px solid var(--textColor);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+
+.vr-about-section-data{
+    width: fit-content;
+    text-align: left;
+    margin: auto;
+}
+
+.vr-about-infos h3{
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+
+.vr-about-infos p{
+    font-size: 0.9rem;
+}

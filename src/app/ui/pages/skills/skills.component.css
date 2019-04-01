@@ -1,20 +1,11 @@
-
 .vr-skills {
     --skillCompleteColor: var(--tealColorAccent);
     --skillIncompleteColor: #154B4A;
-
 }
 
 .vr-skills ul {
     list-style: none;
     padding-left: 0;
-
-}
-
-
-
-.vr-skill-label {
-
 }
 
 .vr-skill .progress {
@@ -26,7 +17,6 @@
     background-color: var(--tealColor) !important;
 
 }
-
 
 .vr-skill-years-progress > i {
     font-size: 1.5rem;

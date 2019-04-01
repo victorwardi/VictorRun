@@ -1,5 +1,6 @@
 .vr-repositories {
-    background-color: var(--repositoriesColor);
+  /*  background-color: var(--repositoriesColor);*/
+    background-color: var(--tealColorAccent);
 }
 
 .vr-repositories .table {

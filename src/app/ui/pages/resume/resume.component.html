@@ -1,18 +1,17 @@
 <!-- Resume -->
-<div class="vr-resume">
+<div class="vr-resume vr-background-color">
     <div class="container m-auto py-5">
         <h1 class="py-4 text-center ">RESUME</h1>
         <p class="py-3  text-center">
             This is my complete resume. If you want a more interactive approach, try my terminal resume
             <a (click)="scrollToElement(vrTerminalResume)"><i class="fas fa-laptop-code"></i> clicking here</a></p>
-
-        <app-experience></app-experience>
-        <app-education></app-education>
-        <app-skills></app-skills>
-
     </div>
-
 </div>
+
+<app-about></app-about>
+<app-experience></app-experience>
+<app-education></app-education>
+<app-skills></app-skills>
 
 <div #vrTerminalResume>
     <app-terminal></app-terminal>

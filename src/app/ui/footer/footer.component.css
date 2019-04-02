@@ -1,16 +1,11 @@
-.vr-footer {
-    background-color: var(--footerColor);
-  }
-
-.vr-footer-logo{
-    background-color: var(--footerColor);
+.vr-footer-logo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin: -100px auto ;
+    margin: -100px auto;
 }
 
-.vr-footer-menu  i.fas {
+.vr-footer-menu i.fas {
     margin-right: 5px;
 }
 
@@ -29,11 +24,10 @@
 
 .vr-footer-infos {
     font-size: 0.9rem;
-    background-color: #272727;
+    border-top: 2px solid var(--tealColorAccent);
     color: #bdbdbd;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding: 15px;
     margin-right: auto;
     margin-left: auto;
     text-align: center;

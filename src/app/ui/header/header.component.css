@@ -1,6 +1,5 @@
 .vr-header{
-
-    background-color: var(--headerColor);
+    /*border-bottom: 3px solid var(--tealColorAccent);*/
 }
 
 .vr-header i.fas {
@@ -8,7 +7,8 @@
 }
 .vr-menu:hover > li a{
     color: #6d6d6d !important;
-    transition: color 170ms ease-in-out, background-color 170ms ease-in-out;
+    /*transition: color 170ms ease-in-out, background-color 170ms ease-in-out;*/
+   transition: background .2s ease-in 0s;
 }
 
 .vr-menu > li a:hover{

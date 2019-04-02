@@ -1,13 +1,10 @@
 :root {
 
-    --bgColor: #0d141d;
+    --bgColor: #0d131f;
     --textColor: #d4d4d4;
     --textLinkHover: #64ffda;
     --terminalColor: #080a10;
     --terminalBgColor: #2c2e38;
-    --repositoriesColor: #121a23;
-    --headerColor: #000d1d;
-    --footerColor: #0d141d;
     --tealColor: #009688;
     --tealColorAccent: #64ffda;
 }
@@ -53,9 +50,40 @@ a:hover {
     width: 50px;
 }
 
+.vr-main{
+    min-height: 100vh;
 
-.vr-background-color:nth-of-type(even) {
-    background: #cc0013;
+}
+
+/************  BACKGROUND COLORS *************/
+.vr-header,
+.vr-footer,
+.vr-footer-logo{
+    background-color: #000000;
+
+}
+
+.vr-home .vr-about{
+    background-color: #bebebe;
+}
+.vr-home .vr-education{
+    background-color: #bebebe;
+}
+.vr-home .vr-experience{
+    background-color: #000000;
+}
+.vr-home .vr-repositories{
+    background-color: #121a23;
+}
+
+.vr-home .vr-runs{
+    background-color: #bebebe;
+}
+.vr-home .vr-skills{
+
+}
+.vr-home .vr-terminal-resume{
+    background-color: var(--terminalColor);
 }
 
 

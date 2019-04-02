@@ -2,7 +2,6 @@
 
 
 .vr-terminal-resume {
-    background-color: var(--terminalColor);
     --terminalAccentColor: var(--tealColorAccent);
 }
 

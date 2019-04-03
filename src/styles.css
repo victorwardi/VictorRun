@@ -21,22 +21,22 @@ body {
     color: var(--textColor) !important;
     background-color: var(--bgColor) !important;
 }
+@media (min-width: 600px) {
+    body::-webkit-scrollbar {
+        width: 1em;
+    }
 
-body::-webkit-scrollbar {
-    width: 1em;
+    body::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--bgColor);
+        outline: 1px solid var(--tealColorAccent);
+        border-radius: 0.5rem;
+        border: 1px solid var(--tealColorAccent);
+    }
 }
-
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: var(--bgColor);
-    outline: 1px solid var(--tealColorAccent);
-    border-radius: 0.5rem;
-    border: 1px solid var(--tealColorAccent);
-}
-
 a {
     color: var(--textColor) !important;
 }
@@ -50,7 +50,7 @@ a:hover {
     width: 50px;
 }
 
-.vr-main{
+.vr-main {
     min-height: 100vh;
 
 }
@@ -58,34 +58,65 @@ a:hover {
 /************  BACKGROUND COLORS *************/
 .vr-header,
 .vr-footer,
-.vr-footer-logo{
+.vr-footer-logo {
     background-color: #000000;
 
 }
 
-.vr-home .vr-about{
+.vr-home .vr-about {
     background-color: #bebebe;
 }
-.vr-home .vr-education{
+
+.vr-home .vr-education {
     background-color: #bebebe;
 }
-.vr-home .vr-experience{
+
+.vr-home .vr-experience {
     background-color: #000000;
 }
-.vr-home .vr-repositories{
+
+.vr-home .vr-repositories {
     background-color: #121a23;
 }
 
-.vr-home .vr-runs{
+.vr-home .vr-runs {
     background-color: #bebebe;
 }
-.vr-home .vr-skills{
+
+.vr-home .vr-skills {
 
 }
-.vr-home .vr-terminal-resume{
-    background-color: var(--terminalColor);
+
+.vr-home .vr-terminal-resume {
+    background-color: #000d1d;
 }
 
+
+/** Buttons **/
+a.vr-button{
+    background: transparent;
+    border: 2px solid var(--tealColorAccent);
+    color: var(--tealColorAccent)!important;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 2.5;
+    transition: background .2s ease-in 0s;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    margin: .5rem;
+    padding: .75rem 3rem;
+    white-space: nowrap;
+
+}
+a.vr-button:hover {
+    color: #09131E!important;
+    background-color: var(--tealColorAccent);
+    border: 2px solid var(--tealColorAccent);
+
+
+
+}
 
 /************  LOADING *************/
 .centered {

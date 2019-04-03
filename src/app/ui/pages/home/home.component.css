@@ -1,0 +1,21 @@
+.vr-welcome {
+
+
+    /* Sizing */
+    height: 100vh;
+
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Text styles */
+    text-align: center;
+
+    /*Negative top margin size of menu to solve problem of full page*/
+    margin-top: -124px;
+
+
+}
+
+

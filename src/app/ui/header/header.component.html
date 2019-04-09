@@ -1,12 +1,12 @@
 <div class="vr-header">
     <nav class="navbar navbar-expand-lg navbar-dark" >
         <a class="navbar-brand" routerLink="/"><img src="assets/images/logo.png" class="vr-logo m-4"/>Victor.run</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#vr-menu-mobile"
+                aria-controls="vr-menu-mobile" [attr.aria-expanded]="showMenu" aria-label="Toggle navigation"
+        (click)="toogleMenu()">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <div class="collapse navbar-collapse drawer-filter text-center" [ngClass]="{'open' :showMenu}" [ngbCollapse]="!showMenu"  id="vr-menu-mobile">
             <ul class="navbar-nav ml-auto vr-menu">
                 <li class="nav-item px-4">
                     <a class="nav-link" routerLink="/resume" ><i class="fas fa-flask"></i> EXPERIENCE</a>

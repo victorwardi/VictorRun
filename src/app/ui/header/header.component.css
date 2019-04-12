@@ -17,22 +17,3 @@
 }
 
 
-
-.drawer-filter {
-    position: relative;
-    right: -1000px;
-    z-index: 2;
-    background: #494949;
-    margin: 0;
-    width: 85vw;
-    min-height: calc(100vh - 113px);
-    transition: all 0.3s;
-    transform: translateX(0px);
-    overflow: visible;
-    overflow-y: auto;
-    height: 100%;
-    overflow-x: hidden;
-}
-.open{
-     right: -1px;
- }
